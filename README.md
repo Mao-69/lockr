@@ -25,3 +25,43 @@ Usage: ./lockr <encrypt|decrypt> <input|- > <output|- > [aadfile] [keyfile]
   Default key file      : <input>.key
   Uses XChaCha20-Poly1305 (192-bit nonce)
 ```
+
+# Encrypting
+```
+./lockr encrypt test.txt test.lockr - test.key
+```
+```
+ /$$                           /$$                
+| $$                          | $$                
+| $$        /$$$$$$   /$$$$$$$| $$   /$$  /$$$$$$ 
+| $$       /$$__  $$ /$$_____/| $$  /$$/ /$$__  $$
+| $$      | $$  \ $$| $$      | $$$$$$/ | $$  \__/
+| $$      | $$  | $$| $$      | $$_  $$ | $$      
+| $$$$$$$$|  $$$$$$/|  $$$$$$$| $$ \  $$| $$      
+|________/ \______/  \_______/|__/  \__/|__/      
+                                                  
+                                                  
+[Lockr] Encrypting test.txt → test.lockr
+[Lockr] Key   (32 bytes): 01ef023ef2fe33034d7e58fa380adc887aeb30f111fb21b87293e76c7ad283af
+[Lockr] Nonce (24 bytes): 28017f2ffda96565380643b55b22611b75bbe5b90848fd96
+[Lockr] Tag   (16 bytes): 06f0aa9b1f5d5fcafd3bf70000000000
+[Lockr] Key saved to test.key
+```
+
+# Decrypting
+```
+./lockr decrypt test.lockr decrypted.txt - test.key
+```
+```
+ /$$                           /$$                
+| $$                          | $$                
+| $$        /$$$$$$   /$$$$$$$| $$   /$$  /$$$$$$ 
+| $$       /$$__  $$ /$$_____/| $$  /$$/ /$$__  $$
+| $$      | $$  \ $$| $$      | $$$$$$/ | $$  \__/
+| $$      | $$  | $$| $$      | $$_  $$ | $$      
+| $$$$$$$$|  $$$$$$/|  $$$$$$$| $$ \  $$| $$      
+|________/ \______/  \_______/|__/  \__/|__/      
+                                                  
+                                                  
+[Lockr] Decrypting test.lockr → decrypted.txt
+```
