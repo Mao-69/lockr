@@ -27,6 +27,10 @@ Usage: ./lockr <encrypt|decrypt> <input|- > <output|- > [aadfile] [keyfile]
 ```
 
 # Encrypting
+- example of encrypting a basic text file
+```
+echo "this is a test" > test.txt
+```
 ```
 ./lockr encrypt test.txt test.lockr - test.key
 ```
@@ -64,4 +68,8 @@ Usage: ./lockr <encrypt|decrypt> <input|- > <output|- > [aadfile] [keyfile]
                                                   
                                                   
 [Lockr] Decrypting test.lockr → decrypted.txt
+```
+```
+cat decrypted.txt
+this is a test
 ```
