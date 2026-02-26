@@ -71,5 +71,7 @@ echo "this is a test" > test.txt
 ```
 ```
 cat decrypted.txt
+```
+```
 this is a test
 ```
